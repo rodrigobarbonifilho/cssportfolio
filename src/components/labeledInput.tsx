@@ -1,6 +1,9 @@
 const LabeledInput = () => {
     return (
-        <input type="text" />
+        <div className="rounded border-solid border-2 border-neutralDeep">
+            <label htmlFor="search"></label>
+            <input className="w-full" name="search" type="text" />
+        </div>
     )
 }
 
