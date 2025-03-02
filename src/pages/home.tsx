@@ -61,14 +61,14 @@ const Home = () => {
           <LabeledInput showLabel={false} />
           <h1 className="text-2xl font-bold">Repositório de CSS</h1>
           <div className="grid grid-cols-9 gap-6 overflow-scroll h-full">
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
+            <Card url="" dirName="" desc="" />
+            <Card url="" dirName="" desc="" />
+            <Card url="" dirName="" desc="" />
+            <Card url="" dirName="" desc="" />
+            <Card url="" dirName="" desc="" />
+            <Card url="" dirName="" desc="" />
+            <Card url="" dirName="" desc="" />
+            <Card url="" dirName="" desc="" />
           </div>
         </main>
       </div>
