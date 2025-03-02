@@ -1,11 +1,12 @@
 import Frame from "..//components//frame";
 import Button from "../components/button";
 import Card from "../components/card";
+import LabeledInput from "../components/labeledInput";
 
 const Home = () => {
   return (
-    <div className="grid grid-cols-12 gap-6">
-      <aside className="flex flex-col gap-6 p-6 col-span-3">
+    <div className="grid grid-cols-12 gap-6 p-6">
+      <aside className="flex flex-col gap-6 col-span-3">
         <Frame>
           <div className="flex flex-col gap-4">
             <div className="flex flex-col gap-4">
@@ -38,9 +39,9 @@ const Home = () => {
           <p className="font-medium"> - Rychard Feynman</p>
         </Frame>
       </aside>
-      <main>
-        <input type="text" name="" id="" />
-        <h1>Repositório de CSS</h1>
+      <main className="flex flex-col gap-6 col-span-9">
+        <LabeledInput />
+        <h1 className="text-2xl font-bold">Repositório de CSS</h1>
         <Card />
       </main>
     </div>
