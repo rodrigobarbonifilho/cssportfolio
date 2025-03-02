@@ -40,10 +40,12 @@ export const getCardsInfo = async (owner: string) => {
     `/repos/${owner}/CSS/git/trees/main?recursive=1`
   );
   const treeData: ITreeNode[] = response.data.tree;
+  console.log(treeData.filter((item) => item.path.match(/.*\.html/)));
+
   const cardInfos: ICardInfo[] = treeData
     .filter((item) => item.path.match(/.*\.html/))
     .map((item) => ({
-      url: "www.google.com",
+      url: `https://rodrigobarbonifilho.github.io/CSS/${item.path}`,
       dirName: item.path.split("/")[0],
       desc: "",
       sha: item.sha,
