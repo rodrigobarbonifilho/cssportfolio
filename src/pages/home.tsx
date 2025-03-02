@@ -48,7 +48,10 @@ const Home = () => {
       <main className="flex flex-col gap-6 col-span-9">
         <LabeledInput showLabel={false} />
         <h1 className="text-2xl font-bold">Repositório de CSS</h1>
-        <div className="grid grid-cols-9">
+        <div className="grid grid-cols-9 gap-6">
+          <Card />
+          <Card />
+          <Card />
           <Card />
         </div>
       </main>

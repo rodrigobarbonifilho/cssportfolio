@@ -4,11 +4,15 @@ import Icon from "./icon";
 
 const Card = () => {
   return (
-    <Frame>
-      <div>
-        <iframe src="" frameborder="0"></iframe>
+    <Frame className="col-span-3">
+      <div className="w-full">
+        <img
+          className="w-full bacg"
+          src="https://www.github.com/rodrigobarbonifilho.png"
+          alt=""
+        />
       </div>
-      <div>
+      <div className="flex">
         <h4>Nome do Diretório</h4>
         <Icon iconName="html" iconSize={16} />
         <Icon iconName="css" iconSize={16} />
@@ -20,7 +24,7 @@ const Card = () => {
         numquam sapiente asperiores saepe consequatur. Totam, velit repellat.
         Voluptatibus atque ab consequuntur?
       </p>
-      <Button showIcon={false} label="Acessar Página" />
+      <Button url="www.google.com" showIcon={false} label="Acessar Página" />
     </Frame>
   );
 };
