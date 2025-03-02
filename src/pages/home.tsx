@@ -27,7 +27,13 @@ const Home = () => {
               diferentes.
             </p>
           </div>
-          <Button url="www.google.com" label="Value" />
+          <Button
+            url="www.google.com"
+            label="Acessar Github"
+            showIcon={true}
+            iconBtnName="github"
+            iconBtnSize={24}
+          />
         </Frame>
         <Frame>
           <p className="italic font-light">
@@ -40,9 +46,11 @@ const Home = () => {
         </Frame>
       </aside>
       <main className="flex flex-col gap-6 col-span-9">
-        <LabeledInput showLabel={false} label="Campo de Pesquisa" />
+        <LabeledInput showLabel={false} />
         <h1 className="text-2xl font-bold">Repositório de CSS</h1>
-        <Card />
+        <div className="grid grid-cols-9">
+          <Card />
+        </div>
       </main>
     </div>
   );

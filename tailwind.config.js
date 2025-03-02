@@ -6,7 +6,7 @@ export default {
       colors: {
         neutralBase: "#FAFAFA",
         neutralDeep: "#210B0A",
-        neutralDark: "#332928",
+        outlineBtnColor: "#6A5553",
       },
 
       fontFamily: {

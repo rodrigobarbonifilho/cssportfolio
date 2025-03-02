@@ -2,10 +2,10 @@ import Icon from "./icon";
 
 type LabeledInputProps = {
   showLabel: boolean;
-  label: string;
+  label?: string;
 };
 
-const LabeledInput = ({ showLabel, label }: LabeledInputProps) => {
+const LabeledInput = ({ showLabel, label = "" }: LabeledInputProps) => {
   return (
     <div className="flex flex-col gap-0">
       {showLabel ? (
