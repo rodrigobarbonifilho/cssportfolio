@@ -40,7 +40,7 @@ const Home = () => {
         </Frame>
       </aside>
       <main className="flex flex-col gap-6 col-span-9">
-        <LabeledInput />
+        <LabeledInput showLabel={false} label="Campo de Pesquisa" />
         <h1 className="text-2xl font-bold">Repositório de CSS</h1>
         <Card />
       </main>
