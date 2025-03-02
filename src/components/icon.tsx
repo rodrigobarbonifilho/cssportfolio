@@ -5,6 +5,7 @@ import { FaGithub } from "react-icons/fa6";
 import { FaHtml5 } from "react-icons/fa";
 import { DiCss3 } from "react-icons/di";
 import { FaJs } from "react-icons/fa6";
+import { TbExternalLink } from "react-icons/tb";
 
 interface IIconMap {
   [key: string]: React.ElementType;
@@ -24,12 +25,13 @@ const Icon = ({ iconName, iconSize }: IconProps) => {
     html: FaHtml5,
     css: DiCss3,
     js: FaJs,
+    external: TbExternalLink,
   };
 
   const IconComponent = iconMap[iconName] || iconMap.error;
 
   return (
-    <div className="flex justify-center items-center w-6 aspect-square">
+    <div className="flex justify-center items-center aspect-square">
       <IconComponent size={iconSize} />
     </div>
   );

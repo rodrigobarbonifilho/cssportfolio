@@ -6,6 +6,7 @@ type ButtonProps = {
   showIcon: boolean;
   iconBtnName?: string;
   iconBtnSize?: number;
+  target?: string;
 };
 
 const Button = ({
@@ -14,10 +15,15 @@ const Button = ({
   showIcon,
   iconBtnName = "",
   iconBtnSize = 0,
+  target = "_self",
 }: ButtonProps) => {
   return (
     <div className="flex justify-center outline-2 outline outline-outlineBtnColor items-center gap-3 rounded p-3 text-base font-semibold w-full bg-neutralDeep text-neutralBase">
-      <a className="flex justify-center items-center gap-4" href={url}>
+      <a
+        target={target}
+        className="flex justify-center items-center gap-4"
+        href={url}
+      >
         {showIcon ? (
           <Icon iconName={iconBtnName} iconSize={iconBtnSize} />
         ) : null}

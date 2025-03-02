@@ -1,6 +1,7 @@
 import Frame from "..//components//frame";
 import Button from "../components/button";
 import Card from "../components/card";
+import Icon from "../components/icon";
 import LabeledInput from "../components/labeledInput";
 
 const Home = () => {
@@ -22,7 +23,14 @@ const Home = () => {
                   <h2 className="text-xl font-semibold">
                     Rodrigo Barboni Filho
                   </h2>
-                  <p className="text-xs opacity-60">rodrigobarbonifilho</p>
+                  <a
+                    href="https://www.github.com/rodrigobarbonifilho"
+                    target="_blank"
+                    className="flex gap-1 text-xs opacity-60 hover:underline"
+                  >
+                    rodrigobarbonifilho
+                    <Icon iconName="external" iconSize={12} />
+                  </a>
                 </div>
               </div>
               <p className="text-base font-light">
@@ -31,11 +39,12 @@ const Home = () => {
               </p>
             </div>
             <Button
-              url="www.google.com"
+              url="https://www.github.com/rodrigobarbonifilho"
               label="Acessar Github"
               showIcon={true}
               iconBtnName="github"
               iconBtnSize={24}
+              target="_blank"
             />
           </Frame>
           <Frame>
