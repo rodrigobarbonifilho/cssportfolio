@@ -33,16 +33,16 @@ const Home = () => {
                   alt=""
                 />
               </div>
-              <div className="flex flex-col gap-2">
+              <div className="flex flex-col gap-1">
                 <div className="flex flex-col gap-4">
                   <div className="flex flex-col gap-">
-                    <h2 className="text-base md:text-xl font-semibold">
+                    <h2 className="text-xl font-semibold">
                       Rodrigo Barboni Filho
                     </h2>
                     <a
                       href="https://www.github.com/rodrigobarbonifilho"
                       target="_blank"
-                      className="flex gap-1 text-[10px] leading-tight md:text-xs opacity-60 hover:underline"
+                      className="flex gap-1 text-xs opacity-60 hover:underline"
                     >
                       rodrigobarbonifilho
                       <Icon iconName="external" iconSize={10} />
