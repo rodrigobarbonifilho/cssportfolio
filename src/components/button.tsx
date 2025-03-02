@@ -18,7 +18,7 @@ const Button = ({
   target = "_self",
 }: ButtonProps) => {
   return (
-    <div className="flex justify-center outline-2 outline outline-outlineBtnColor items-center gap-3 rounded p-3 text-base font-semibold w-full bg-neutralDeep text-neutralBase">
+    <div className="flex justify-center outline-2 outline outline-outlineBtnColor items-center gap-3 rounded p-3 ,md:text-base text-xs font-semibold w-full bg-neutralDeep text-neutralBase">
       <a
         target={target}
         className="flex justify-center items-center gap-4"

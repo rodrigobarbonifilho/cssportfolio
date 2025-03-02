@@ -18,7 +18,7 @@ const Card = ({
   },
 }: CardProps) => {
   return (
-    <Frame className="col-span-3">
+    <Frame className="flex flex-col col-span-3">
       <div className="w-full">
         <iframe
           className="scale-[20%] origin-top-left w-[500%] h-[500%] rounded-2xl border-4 border-solid border-neutralDeep"

@@ -21,48 +21,50 @@ const Home = () => {
   console.log(cardsInfo);
 
   return (
-    <div className="p-6 overflow-hidden h-screen">
-      <div className="grid grid-cols-12 gap-6 h-calc-100vh-48px overflow-hidden">
-        <aside className="flex flex-col gap-6 col-span-3 h-calc-100vh-48px overflow-scroll">
-          <Frame>
-            <div className="flex flex-col gap-4">
-              <div className="flex flex-col gap-4">
-                <div className="w-full aspect-square">
-                  <img
-                    className="rounded-full border-2 border-solid border-neutralDeep w-full"
-                    src="https://github.com/rodrigobarbonifilho.png"
-                    alt=""
-                  />
-                </div>
-                <div className="flex flex-col gap-0">
-                  <h2 className="text-xl font-semibold">
-                    Rodrigo Barboni Filho
-                  </h2>
-                  <a
-                    href="https://www.github.com/rodrigobarbonifilho"
-                    target="_blank"
-                    className="flex gap-1 text-xs opacity-60 hover:underline"
-                  >
-                    rodrigobarbonifilho
-                    <Icon iconName="external" iconSize={12} />
-                  </a>
-                </div>
+    <div className="p-4 md:p-6 md:overflow-hidden h-screen">
+      <div className="flex flex-col md:grid grid-cols-12 md:gap-6 gap-2 h-fit md:h-calc-100vh-48px overflow-hidden">
+        <aside className="flex flex-col gap-6 col-span-3 h-fit md:h-calc-100vh-48px overflow-scroll">
+          <Frame className="flex flex-col gap-4">
+            <div className="flex h-20 gap-6">
+              <div className="aspect-square h-full">
+                <img
+                  className="rounded-full border-2 border-solid border-neutralDeep h-full"
+                  src="https://github.com/rodrigobarbonifilho.png"
+                  alt=""
+                />
               </div>
-              <p className="text-base font-light">
-                Dev que se diverte aprendendo e gosta de experimentar
-                tecnologias diferentes.
-              </p>
+              <div className="flex flex-col gap-2">
+                <div className="flex flex-col gap-4">
+                  <div className="flex flex-col gap-">
+                    <h2 className="text-base md:text-xl font-semibold">
+                      Rodrigo Barboni Filho
+                    </h2>
+                    <a
+                      href="https://www.github.com/rodrigobarbonifilho"
+                      target="_blank"
+                      className="flex gap-1 text-[10px] leading-tight md:text-xs opacity-60 hover:underline"
+                    >
+                      rodrigobarbonifilho
+                      <Icon iconName="external" iconSize={10} />
+                    </a>
+                  </div>
+                </div>
+                <p className="text-xs font-light">
+                  Dev que se diverte aprendendo e gosta de experimentar
+                  tecnologias diferentes.
+                </p>
+              </div>
             </div>
             <Button
               url="https://www.github.com/rodrigobarbonifilho"
               label="Acessar Github"
               showIcon={true}
               iconBtnName="github"
-              iconBtnSize={24}
+              iconBtnSize={16}
               target="_blank"
             />
           </Frame>
-          <Frame>
+          <Frame className="flex flex-col gap-0">
             <p className="italic font-light">
               “A ciência é como a malha de uma rede. À medida que você aprende
               mais, a rede se torna mais fina e mais detalhada, e a medida em

@@ -8,7 +8,7 @@ type FrameProps = {
 const Frame = ({ children, className = "" }: FrameProps) => {
   return (
     <div
-      className={`flex flex-col bg-neutralBase p-4 border-2 rounded gap-2 border-solid  border-neutralDeep text-base ${className}`}
+      className={`bg-neutralBase p-4 border-2 rounded border-solid border-neutralDeep text-xs md:text-base ${className}`}
     >
       {children}
     </div>
