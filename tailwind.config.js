@@ -12,6 +12,10 @@ export default {
       fontFamily: {
         poppins: ["Poppins", "sans-serif"],
       },
+
+      height: {
+        "calc-100vh-48px": "calc(100vh - 48px)",
+      },
     },
   },
   plugins: [],

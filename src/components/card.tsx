@@ -2,28 +2,32 @@ import Button from "./button";
 import Frame from "./frame";
 import Icon from "./icon";
 
-const Card = () => {
+type CardProps = {
+  url: string;
+  dirName: string;
+  desc: string;
+};
+
+const Card = ({
+  url = "https://www.google.com",
+  dirName = "Nome do Diretório",
+  desc = "descrição",
+}: CardProps) => {
   return (
     <Frame className="col-span-3">
       <div className="w-full">
-        <img
-          className="w-full bacg"
-          src="https://www.github.com/rodrigobarbonifilho.png"
-          alt=""
-        />
+        <iframe
+          className="scale-[20%] origin-top-left w-[500%] h-[500%] rounded-2xl border-4 border-solid border-neutralDeep"
+          src={url}
+        ></iframe>
       </div>
-      <div className="flex">
-        <h4>Nome do Diretório</h4>
+      <div className="flex justify-start items-center">
+        <h4 className="text-sm font-semibold">{dirName}</h4>
         <Icon iconName="html" iconSize={16} />
         <Icon iconName="css" iconSize={16} />
         <Icon iconName="js" iconSize={16} />
       </div>
-      <p>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima
-        obcaecati dolorem quae hic placeat, pariatur deserunt quidem ullam
-        numquam sapiente asperiores saepe consequatur. Totam, velit repellat.
-        Voluptatibus atque ab consequuntur?
-      </p>
+      <p className="text-xs text-wrap line-clamp-4 h-16">{desc}</p>
       <Button url="www.google.com" showIcon={false} label="Acessar Página" />
     </Frame>
   );
