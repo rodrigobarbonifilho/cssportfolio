@@ -3,15 +3,19 @@ import Frame from "./frame";
 import Icon from "./icon";
 
 type CardProps = {
-  url: string;
-  dirName: string;
-  desc: string;
+  data: {
+    url: string;
+    dirName: string;
+    desc: string;
+  };
 };
 
 const Card = ({
-  url = "https://www.google.com",
-  dirName = "Nome do Diretório",
-  desc = "descrição",
+  data: {
+    url = "https://www.google.com",
+    dirName = "Nome do Diretório",
+    desc = "descrição",
+  },
 }: CardProps) => {
   return (
     <Frame className="col-span-3">

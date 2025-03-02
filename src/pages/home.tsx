@@ -3,8 +3,23 @@ import Button from "../components/button";
 import Card from "../components/card";
 import Icon from "../components/icon";
 import LabeledInput from "../components/labeledInput";
+import { getCardsInfo, ICardInfo } from "../api/repoApi";
+import { useEffect, useState } from "react";
 
 const Home = () => {
+  const [cardsInfo, setCardsInfo] = useState<ICardInfo[]>([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const res = await getCardsInfo("rodrigobarbonifilho");
+      setCardsInfo(res);
+    };
+
+    fetchData();
+  }, [cardsInfo]);
+
+  console.log(cardsInfo);
+
   return (
     <div className="p-6 overflow-hidden h-screen">
       <div className="grid grid-cols-12 gap-6 h-calc-100vh-48px overflow-hidden">
@@ -61,14 +76,14 @@ const Home = () => {
           <LabeledInput showLabel={false} />
           <h1 className="text-2xl font-bold">Repositório de CSS</h1>
           <div className="grid grid-cols-9 gap-6 overflow-scroll h-full">
-            <Card url="" dirName="" desc="" />
-            <Card url="" dirName="" desc="" />
-            <Card url="" dirName="" desc="" />
-            <Card url="" dirName="" desc="" />
-            <Card url="" dirName="" desc="" />
-            <Card url="" dirName="" desc="" />
-            <Card url="" dirName="" desc="" />
-            <Card url="" dirName="" desc="" />
+            {cardsInfo.map(({ url, dirName, desc, sha }) => {
+              return (
+                <Card
+                  data={{ url: url, dirName: dirName, desc: desc }}
+                  key={sha}
+                />
+              );
+            })}
           </div>
         </main>
       </div>
