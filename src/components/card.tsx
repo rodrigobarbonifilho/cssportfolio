@@ -18,11 +18,12 @@ const Card = ({
   },
 }: CardProps) => {
   return (
-    <Frame className="flex flex-col col-span-3">
-      <div className="w-full">
+    <Frame className="flex flex-col gap-2 md:col-span-3">
+      <div className="w-full aspect-video">
         <iframe
           className="scale-[20%] origin-top-left w-[500%] h-[500%] rounded-2xl border-4 border-solid border-neutralDeep"
           src={url}
+          scrolling="no"
         ></iframe>
       </div>
       <div className="flex justify-start items-center">
