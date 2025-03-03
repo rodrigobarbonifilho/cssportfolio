@@ -33,7 +33,12 @@ const Card = ({
         <Icon iconName="js" iconSize={16} />
       </div>
       <p className="text-xs text-wrap line-clamp-4 h-16">{desc}</p>
-      <Button url="www.google.com" showIcon={false} label="Acessar Página" />
+      <Button
+        url={url}
+        showIcon={false}
+        label="Acessar Página"
+        target="_blank"
+      />
     </Frame>
   );
 };
