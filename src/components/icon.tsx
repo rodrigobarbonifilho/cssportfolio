@@ -6,6 +6,7 @@ import { FaHtml5 } from "react-icons/fa";
 import { DiCss3 } from "react-icons/di";
 import { FaJs } from "react-icons/fa6";
 import { TbExternalLink } from "react-icons/tb";
+import { IoSad } from "react-icons/io5";
 
 interface IIconMap {
   [key: string]: React.ElementType;
@@ -13,10 +14,11 @@ interface IIconMap {
 
 type IconProps = {
   iconName: keyof IIconMap;
-  iconSize: number;
+  iconSize?: number;
+  className?: string;
 };
 
-const Icon = ({ iconName, iconSize }: IconProps) => {
+const Icon = ({ iconName, iconSize = 24, className = "" }: IconProps) => {
   const iconMap: IIconMap = {
     search: IoSearchSharp,
     filter: IoFilterSharp,
@@ -26,12 +28,15 @@ const Icon = ({ iconName, iconSize }: IconProps) => {
     css: DiCss3,
     js: FaJs,
     external: TbExternalLink,
+    sadFace: IoSad,
   };
 
   const IconComponent = iconMap[iconName] || iconMap.error;
 
   return (
-    <div className="flex justify-center items-center aspect-square">
+    <div
+      className={`flex justify-center items-center aspect-square ${className}`}
+    >
       <IconComponent size={iconSize} />
     </div>
   );

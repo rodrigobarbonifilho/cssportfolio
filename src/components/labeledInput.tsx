@@ -1,13 +1,13 @@
 import Icon from "./icon";
 
 type LabeledInputProps = {
-  handleInputChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  setValue: (newValue: string) => void;
   showLabel: boolean;
   label?: string;
 };
 
 const LabeledInput = ({
-  handleInputChange,
+  setValue,
   showLabel,
   label = "",
 }: LabeledInputProps) => {
@@ -18,10 +18,12 @@ const LabeledInput = ({
           {label}
         </label>
       ) : null}
-      <div className="flex px-4 py-3 bg-neutralBase gap-4 text-base rounded border-solid border-2 border-neutralDeep">
+      <div className="flex px-4 py-3 bg-neutralBase gap-4 text-base rounded border-solid border-2 border-neutralDeep no-clear">
         <Icon iconName="search" iconSize={24} />
         <input
-          onInput={handleInputChange}
+          onInput={(event: React.ChangeEvent<HTMLInputElement>) => {
+            setValue(event.target.value);
+          }}
           className="w-full bg-neutralBase focus:outline-none"
           name="search"
           type="search"

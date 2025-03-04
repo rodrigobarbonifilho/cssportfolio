@@ -22,11 +22,21 @@ export const getCardsInfo = async (owner: string) => {
   );
   const treeData: ITreeNode[] = response.data.tree;
 
+  const capitalize = (text: string) => {
+    return text
+      .split(" ")
+      .map(
+        (substring) =>
+          substring.charAt(0).toUpperCase() + substring.slice(1).toLowerCase()
+      )
+      .join(" ");
+  };
+
   const cardInfos: ICardInfo[] = treeData
     .filter((item) => item.path.match(/.*\.html/))
     .map((item) => ({
       url: `https://rodrigobarbonifilho.github.io/CSS/${item.path}`,
-      dirName: item.path.split("/")[0],
+      dirName: capitalize(item.path.split("/")[0].replace(/-/g, " ")),
       desc: "",
       sha: item.sha,
     }));
