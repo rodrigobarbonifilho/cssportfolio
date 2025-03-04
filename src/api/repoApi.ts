@@ -1,24 +1,5 @@
 import axiosInstance from "./axiosInstance";
 
-// interface IRepoContent {
-//   download_url: string;
-//   git_url: string;
-//   html_url: string;
-//   name: string;
-//   path: string;
-//   sha: string;
-//   size: number;
-//   type: "dir" | "file";
-//   url: string;
-//   _link: [
-//     {
-//       self: string;
-//       html: string;
-//       git: string;
-//     }
-//   ];
-// }
-
 interface ITreeNode {
   mode: string;
   path: string;
@@ -40,7 +21,6 @@ export const getCardsInfo = async (owner: string) => {
     `/repos/${owner}/CSS/git/trees/main?recursive=1`
   );
   const treeData: ITreeNode[] = response.data.tree;
-  console.log(treeData.filter((item) => item.path.match(/.*\.html/)));
 
   const cardInfos: ICardInfo[] = treeData
     .filter((item) => item.path.match(/.*\.html/))

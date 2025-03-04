@@ -9,16 +9,25 @@ import { useEffect, useState } from "react";
 const Home = () => {
   const [cardsInfo, setCardsInfo] = useState<ICardInfo[]>([]);
 
+  const fetchData = async () => {
+    const res = await getCardsInfo("rodrigobarbonifilho");
+    return res;
+  };
+
   useEffect(() => {
-    const fetchData = async () => {
-      const res = await getCardsInfo("rodrigobarbonifilho");
-      setCardsInfo(res);
-    };
+    fetchData().then((res) => setCardsInfo(res));
+  }, []);
 
-    fetchData();
-  }, [cardsInfo]);
+  const handleInputChange = async (
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    const searchValue = RegExp(`${event.target.value.toLowerCase()}`);
+    const res = await getCardsInfo("rodrigobarbonifilho");
 
-  console.log(cardsInfo);
+    setCardsInfo(
+      res.filter((card) => searchValue.test(card.dirName.toLowerCase()))
+    );
+  };
 
   return (
     <div className="p-4 md:p-6 md:overflow-hidden h-screen">
@@ -75,7 +84,10 @@ const Home = () => {
           </Frame>
         </aside>
         <main className="flex flex-col gap-4 md:gap-6 col-span-9 md:overflow-hidden h-fit md:h-calc-100vh-48px overflow-scroll">
-          <LabeledInput showLabel={false} />
+          <LabeledInput
+            showLabel={false}
+            handleInputChange={handleInputChange}
+          />
           <h1 className="text-2xl font-bold">Repositório de CSS</h1>
           <div className="grid grid-cols-1 md:grid-cols-9 md:gap-6 gap-4 overflow-scroll h-fit pb-4 md:pb-0 md:h-calc-100vh-48px">
             {cardsInfo.map(({ url, dirName, desc, sha }) => {
