@@ -1,6 +1,6 @@
-import Button from "./button";
-import Frame from "./frame";
-import Icon from "./icon";
+import Button from "../Button";
+import Frame from "../Frame";
+import Icon from "../Icon";
 
 type CardProps = {
   data: {

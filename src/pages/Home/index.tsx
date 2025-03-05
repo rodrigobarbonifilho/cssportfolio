@@ -1,9 +1,9 @@
-import Frame from "..//components//frame";
-import Button from "../components/button";
-import Card from "../components/card";
-import Icon from "../components/icon";
-import LabeledInput from "../components/labeledInput";
-import { getCardsInfo, ICardInfo } from "../api/repoApi";
+import Frame from "../../components/Frame";
+import Button from "../../components/Button";
+import Card from "../../components/Card";
+import Icon from "../../components/Icon";
+import LabeledInput from "../../components/LabeledInput";
+import { getCardsInfo, ICardInfo } from "../../api/repoApi";
 import { useEffect, useState } from "react";
 
 const CardsNotFoundMessage = () => {

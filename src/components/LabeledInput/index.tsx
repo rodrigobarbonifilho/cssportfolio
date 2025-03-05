@@ -1,4 +1,4 @@
-import Icon from "./icon";
+import Icon from "../Icon";
 
 type LabeledInputProps = {
   setValue: (newValue: string) => void;
