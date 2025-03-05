@@ -63,7 +63,7 @@ const Home = () => {
                       className="flex gap-1 text-xs opacity-60 hover:underline"
                     >
                       rodrigobarbonifilho
-                      <Icon iconName="external" iconSize={10} />
+                      <Icon iconName="external" iconSize={12} />
                     </a>
                   </div>
                 </div>

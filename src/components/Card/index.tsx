@@ -25,11 +25,11 @@ const Card = ({
           src={url}
         ></iframe>
       </div>
-      <div className="flex justify-between items-center">
+      <div className="flex gap-1 justify-between items-center">
         <h4 className="text-sm font-semibold w-4/5 truncate">{dirName}</h4>
-        <Icon iconName="html" webIconSize={16} color="#E34C26" />
-        <Icon iconName="css" webIconSize={16} color="#264DE4" />
-        <Icon iconName="js" webIconSize={16} color="#F0DB4F" />
+        <Icon iconName="html" iconSize={16} color="#E34C26" />
+        <Icon iconName="css" iconSize={16} color="#264DE4" />
+        <Icon iconName="js" iconSize={16} color="#F0DB4F" />
       </div>
       <p className="text-xs text-wrap line-clamp-4 h-16">{desc}</p>
       <Button
