@@ -14,11 +14,19 @@ interface IIconMap {
 
 type IconProps = {
   iconName: keyof IIconMap;
-  iconSize?: number;
+  webIconSize?: number;
+  mobileIconSize?: number;
   className?: string;
+  color?: string;
 };
 
-const Icon = ({ iconName, iconSize = 24, className = "" }: IconProps) => {
+const Icon = ({
+  iconName,
+  webIconSize = 24,
+  mobileIconSize = 16,
+  className = "",
+  color = "",
+}: IconProps) => {
   const iconMap: IIconMap = {
     search: IoSearchSharp,
     filter: IoFilterSharp,
@@ -33,11 +41,16 @@ const Icon = ({ iconName, iconSize = 24, className = "" }: IconProps) => {
 
   const IconComponent = iconMap[iconName] || iconMap.error;
 
+  const windowWidth = window.innerWidth;
+
   return (
     <div
       className={`flex justify-center items-center aspect-square ${className}`}
     >
-      <IconComponent size={iconSize} />
+      <IconComponent
+        size={windowWidth < 768 ? mobileIconSize : webIconSize}
+        color={color}
+      />
     </div>
   );
 };
