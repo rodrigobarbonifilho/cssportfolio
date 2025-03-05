@@ -9,10 +9,6 @@
   box-sizing: border-box;
 }
 
-html {
-  height: 100vh;
-}
-
 body {
   background-image: url("/github_bg.jpg");
   background-size: cover;

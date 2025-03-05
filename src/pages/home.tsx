@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 
 const CardsNotFoundMessage = () => {
   return (
-    <div className="flex flex-col gap-2 justify-center items-center">
+    <div className="flex flex-col col-span-full gap-2 justify-center items-center">
       <Icon iconName="sadFace" iconSize={64} />
       <p className="text-xl font-semibold">Projetos não encontrados</p>
     </div>
